@@ -9,8 +9,8 @@ model = AutoModelForCausalLM.from_pretrained(MODEL, local_files_only=True)
 
 def handle():
     messages = [{"role": "user", "content": "In one sentence, what is a data centre for?"}]
-    ids = tok.apply_chat_template(messages, tokenize=False)
-    inputs = tokenizer.encode(ids, return_tensors="pt")
+    ids = tok.apply_chat_template(messages, tokenize=False,  add_generation_prompt=True)
+    inputs = tok.encode(ids, return_tensors="pt")
     
     t0 = time.perf_counter()
     out = model.generate(inputs, max_new_tokens=40, do_sample=False)
