@@ -2,7 +2,7 @@ import json
 import urllib.request
 import urllib.error
 
-BOARD = "https://aidc.nadir.sh/"
+BOARD = "https://aidc.nadir.sh/model"
 TEAM = "3"
 BY = "FayAlaamri"
 MODEL = "HuggingFaceTB/SmolLM2-135M-Instruct"
