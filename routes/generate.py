@@ -20,7 +20,7 @@ def handle():
     
     return {
         "model": MODEL, 
-        "sample": tok.decode(out[0][input_length:],skip_special_tokens=True).strip(),
+        "sample": tok.decode(out[0][inputs["input_ids"].shape[-1]:],skip_special_tokens=True).strip(),
         "seconds": round(dt, 2), 
         "tokens_per_sec": round(n / dt, 1)
     }
